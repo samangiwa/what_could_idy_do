@@ -1,0 +1,143 @@
+@import url(typography.css);
+body {
+    margin: 0;
+    font-family: "Englebert", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.canvas {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+    line-height: 1.25;
+    background-color: white;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #f9f9f9;
+}
+
+.card-front img {
+    max-width: 80px;
+    max-height: 100px;
+}
+
+.card-front p, .card-back p {
+    margin: 5px 0;
+}
+
+.clue-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.clue-text {
+    display: none;
+    margin-top: 10px;
+}
+
+.zoom-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.zoom-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    z-index: 30;
+    transition: transform 0.3s, z-index 0s 0.3s; /* Delay z-index reset until after transform */
+}
+
+.zoom-side {
+    pointer-events: auto; /* Enable interaction with the clicked side */
+}
+
+.zoom-card img {
+    max-width: 160px;
+    max-height: 200px;
+}
+
+.clue-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    z-index: 40;
+    display: none;
+}
+
+.clue-overlay p {
+    margin: 0;
+}
+
+.close-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
