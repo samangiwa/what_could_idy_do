@@ -9,6 +9,7 @@ body {
     background-color: #f0f0f0;
 }
 
+
 .canvas {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -23,6 +24,8 @@ body {
     height: 250px;
     perspective: 1000px;
     position: relative;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -48,10 +51,11 @@ body {
     border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:end;
     align-items: center;
     font-size: 10pt;
     line-height: 1.25;
+    padding: 2px;
     background-color: white;
 }
 
@@ -110,8 +114,8 @@ body {
 }
 
 .zoom-card img {
-    max-width: 160px;
-    max-height: 200px;
+    max-width: 200px;
+    max-height: 240px;
 }
 
 .clue-overlay {
