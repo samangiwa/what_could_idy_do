@@ -76,7 +76,7 @@ body {
 .clue-btn {
     margin-top: 10px;
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #1C9099;
     color: white;
     border: none;
     cursor: pointer;
@@ -134,14 +134,17 @@ body {
 
 .clue-overlay p {
     margin: 0;
+    line-height: 1.25;
 }
 
 .close-btn {
     margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
+    padding: 10px;
+    background-color:#1C9099;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-family: "Englebert", cursive;
+    font-size: 10pt;
 }
