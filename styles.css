@@ -1,11 +1,12 @@
 @import url(typography.css);
 body {
     margin: 0;
+    top: 0;
     font-family: "Englebert", cursive;
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
 }
 
@@ -13,14 +14,14 @@ body {
 .canvas {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 10px;
-    padding: 20px;
+    grid-gap: 16px;
+    padding: 25px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .card {
-    width: 200px;
+    width: 180px;
     height: 250px;
     perspective: 1000px;
     position: relative;
@@ -43,40 +44,86 @@ body {
     transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border: 1px solid #ddd;
+    border-radius:15px;
+    border: 1.5px solid #343434;
     display: flex;
     flex-direction: column;
-    justify-content:end;
+    justify-content:space-between;
     align-items: center;
-    font-size: 10pt;
     line-height: 1.25;
-    padding: 2px;
+    padding: 3px;
     background-color: white;
 }
 
 .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius:15px;
+    border: 1.5px solid #343434;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    line-height: 1.25;
+    padding: 10px;
+    background-color: white;
     transform: rotateY(180deg);
     background-color: #f9f9f9;
 }
 
-.card-front img {
-    max-width: 80px;
-    max-height: 100px;
+.title-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius:15px;
+    border: 1.5px solid #343434;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.25;
+    background-color: white;
+    align-items: flex-start;
+    justify-content: end;
+    text-align: left;
+
+}
+.title-card h1{
+    padding-left: 20px;
 }
 
-.card-front p, .card-back p {
+.card-front .img_intro {
+    max-width:100px ;
+    padding: none;
+
+}
+.card-front img {
+    max-width:150px ;
+    padding: none;
+
+}
+
+.card-front p {
     margin: 5px 0;
+    font-size: 8pt;
+}
+
+.card-back h2 {
+    text-align: center;
+
 }
 
 .clue-btn {
     margin-top: 10px;
     padding: 5px 10px;
-    background-color: #1C9099;
+    background-color: #000000;
     color: white;
     border: none;
     cursor: pointer;
@@ -113,20 +160,21 @@ body {
     pointer-events: auto; /* Enable interaction with the clicked side */
 }
 
-.zoom-card img {
+/* .zoom-card img {
     max-width: 200px;
     max-height: 240px;
-}
+} */
 
 .clue-overlay {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 48%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: #ffffff;
     padding: 20px;
+    border: 1px solid #343434;
     border-radius: 10px;
-    max-width: 300px;
+    max-width: 400px;
     text-align: center;
     z-index: 40;
     display: none;
@@ -134,17 +182,26 @@ body {
 
 .clue-overlay p {
     margin: 0;
+    font-size: 14pt;
     line-height: 1.25;
 }
 
 .close-btn {
     margin-top: 10px;
     padding: 10px;
-    background-color:#1C9099;
+    background-color:#000000;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-family: "Englebert", cursive;
-    font-size: 10pt;
+    font-size: 14pt;
+}
+
+.canvas .miro{
+    height: 720px;
+    width:1280px ;
+    padding: 42px;
+    justify-content: center;
+    align-self: center;
 }

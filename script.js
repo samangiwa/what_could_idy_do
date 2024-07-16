@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let zoomedSide = null;
 
     const handleZoom = (event) => {
-        const clickedSide = event.target.closest('.card-front, .card-back');
+        const clickedSide = event.target.closest('.card-front, .title-card, .card-back');
         if (!clickedSide) return;
 
         if (zoomedCard) {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener('click', handleZoom);
 
         // Handle flipping the card in zoomed mode
-        card.querySelectorAll('.card-front, .card-back').forEach(side => {
+        card.querySelectorAll('.card-front,.title-card, .card-back').forEach(side => {
             side.addEventListener('click', (event) => {
                 if (zoomedCard && !event.target.classList.contains('clue-btn')) {
                     event.stopPropagation();
