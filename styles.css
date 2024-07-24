@@ -227,6 +227,14 @@ body {
     gap: 15px;
 }
 
+.page-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
 .input-box {
     border: 1px solid #000;
     border-radius: 15px;
