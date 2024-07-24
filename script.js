@@ -104,3 +104,57 @@ document.addEventListener("DOMContentLoaded", () => {
         zoomBackdrop.style.display = 'none';
     };
 });
+
+
+
+// for the miro
+
+function saveAsCSV() {
+    const features = document.getElementById('features').value;
+    const capabilities = document.getElementById('capabilities').value;
+    const communication = document.getElementById('communication').value;
+
+    const csvContent = "data:text/csv;charset=utf-8,"
+        + "Question,Answer\n"
+        + "What features do you think I-space could have?," + features + "\n"
+        + "What capabilities do you think Idy could have?," + capabilities + "\n"
+        + "How could clients use I-space and Idy to communicate with designers and other project stakeholders?," + communication + "\n";
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "i_space_idy_info.csv");
+    document.body.appendChild(link);
+    link.click();
+}
+
+function saveAsDOC() {
+    const features = document.getElementById('features').value;
+    const capabilities = document.getElementById('capabilities').value;
+    const communication = document.getElementById('communication').value;
+
+    const docContent = `
+        <html>
+            <head><meta charset="utf-8"><title>I-space and Idy Information</title></head>
+            <body>
+                <h3>What features do you think I-space could have?</h3>
+                <p>${features}</p>
+                <h3>What capabilities do you think Idy could have?</h3>
+                <p>${capabilities}</p>
+                <h3>How could clients use I-space and Idy to communicate with designers and other project stakeholders?</h3>
+                <p>${communication}</p>
+            </body>
+        </html>
+    `;
+
+    const blob = new Blob(['\ufeff', docContent], {
+        type: 'application/msword'
+    });
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'i_space_idy_info.doc';
+    document.body.appendChild(link);
+    link.click();
+}

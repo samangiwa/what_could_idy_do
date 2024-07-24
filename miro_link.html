@@ -2,16 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-space and Idy Interface Design</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Worksheet</title>
+
+
 </head>
 <body>
-    <div class="canvas" id="canvas">
+    <div class="page">
+    <div class="canvas-stage">
+        <div class="input-box">
+            <h3>What type of an interface do you expect I-space to have? Sketch your idea here.</h3>
+            <iframe class="miro"src="https://miro.com/app/live-embed/uXjVKzVTX2U=/?moveToViewport=-2015,-1257,5202,2966&embedId=500636400496" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+        </div>
+        <div class="container">
+        <div class="input-box">
+            <h3>What features do you think I-space could have?</h3>
+            <textarea class="textarea" id="features"></textarea>
+        </div>
+        <div class="input-box">
+            <h3>What capabilities do you think Idy could have?</h3>
+            <textarea class="textarea" id="capabilities"></textarea>
+        </div>
+        </div>
+    </div>
 
-    <iframe class="miro"src="https://miro.com/app/live-embed/uXjVKzVTX2U=/?moveToViewport=-2015,-1257,5202,2966&embedId=500636400496" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+        <div class="input-box">
+            <h3>How could clients use I-space and Idy to communicate with designers and other project stakeholders?</h3>
+            <textarea class="textarea" id="communication"></textarea>
+        </div>
 
-</div>
+
+        <div class="buttons">
+            <!--<button onclick="saveAsCSV()">Save as CSV</button> -->
+            <button onclick="saveAsDOC()">Save as DOC</button>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

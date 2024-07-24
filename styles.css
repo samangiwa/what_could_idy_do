@@ -198,10 +198,64 @@ body {
     font-size: 14pt;
 }
 
-.canvas .miro{
-    height: 720px;
-    width:1280px ;
-    padding: 42px;
+.miro{
+    height: 350px;
+    width: 600px ;
     justify-content: center;
     align-self: center;
+}
+
+.page{
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        gap: 15px;
+        background-color:white ;
+}
+
+.canvas-stage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.input-box {
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.input-box .p {
+   text-align:left ;
+}
+
+.miro-board {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.textarea {
+    width: 99%;
+    height: 130px;
+    resize: none;
+    padding: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
